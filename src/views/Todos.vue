@@ -6,6 +6,11 @@
         <AddTodo
                 @add-todo="addTodo"
         />
+        <select v-model="filter">
+            <option value="all">All</option>
+            <option value="completed">Completed</option>
+            <option value="not-completed">Not Completed</option>
+        </select>
         <hr>
         <Loader v-if="loading"/>
         <TodoList
@@ -27,7 +32,8 @@
         data() {
             return {
                 todos: [],
-                loading: true
+                loading: true,
+                filter: 'all'
             }
         },
         mounted() {
@@ -39,6 +45,11 @@
                         this.loading = false;
                     }, 1000)
                 })
+        },
+        watch: {
+            filter(value) {
+                console.log(value);
+            }
         },
         methods: {
             removeTodo(id) {
