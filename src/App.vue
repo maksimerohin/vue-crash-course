@@ -16,7 +16,7 @@
         data() {
             return {
                 todos: [
-                    {id: 1, title: 'Купить хлеб', completed: false},
+                    {id: 1, title: 'Купить хлеб', completed: true},
                     {id: 2, title: 'Купить масло', completed: false},
                     {id: 3, title: 'Купить сыр', completed: false}
                 ]
